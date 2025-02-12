@@ -72,4 +72,22 @@ class TaskController extends Controller
         $task = Task::findOrFail($id);
         return response()->json($task);
     }
+
+    // fitur update
+    public function update(Request $request, $id) {
+        $request->validate([
+            'name' => 'required|max:100',
+            'description' => 'required|max:100',
+            'priority' => 'required|in:low,medium,high',
+        ]);
+    
+        $task = Task::findOrFail($id);
+        $task->update([
+            'name' => $request->name,
+            'description' => $request->description,
+            'priority' => $request->priority
+        ]);
+    
+        return redirect()->back();
+    }
 }
