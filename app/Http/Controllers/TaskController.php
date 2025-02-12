@@ -49,4 +49,10 @@ class TaskController extends Controller
         return redirect()->back();
     }
 
+     // menghapus task sesuai id
+     public function destroy($id) {
+        Task::findOrFail($id)->delete();
+
+        return redirect()->back();
+    }
 }
