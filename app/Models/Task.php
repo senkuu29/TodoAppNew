@@ -29,6 +29,16 @@ class Task extends Model
         'medium',
         'high'
     ];
+    
+    //digunakan untuk mengubah nilai atribut priority menjadi sebuah kelas CSS 
+    public function getPriorityClassAttribute() {
+        return match($this->attributes['priority']) {
+            'low' => 'success',
+            'medium' => 'warning',
+            'high' => 'danger',
+            default => 'secondary'
+        };
+    }
 
     // many-to-one (antara model Task dan model TaskList)
      public function list() {
