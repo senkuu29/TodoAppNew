@@ -12,3 +12,7 @@ Route::resource('lists', TaskListController::class);
 // Resource route untuk TaskController
 // Ini secara otomatis membuat route untuk operasi CRUD pada tugas (tasks)
 Route::resource('tasks', TaskController::class);
+
+// Route khusus untuk menandai tugas sebagai selesai
+// Menggunakan metode PATCH karena hanya memperbarui sebagian data
+Route::patch('/tasks/{task}/complete', [TaskController::class, 'complete'])->name('tasks.complete');
