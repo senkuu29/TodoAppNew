@@ -5,6 +5,9 @@ use App\Http\Controllers\TaskListController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Task;
 
+// Membuat route untuk home
+Route::get('/', [TaskController::class, 'index'])->name('home');
+
 // Resource route untuk TaskListController
 // Ini secara otomatis membuat route untuk operasi CRUD pada daftar tugas (lists)
 Route::resource('lists', TaskListController::class);
