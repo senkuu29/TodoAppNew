@@ -40,4 +40,13 @@ class TaskController extends Controller
         return redirect()->back();
     }
 
+    // digunakan untuk menandai suatu tugas (task) sebagai selesai
+    public function complete($id) {
+        Task::findOrFail($id)->update([  //Jika task dengan ID tersebut ditemukan, maka data akan dikembalikan.Jika tidak ditemukan, Laravel akan otomatis melempar error 404 Not Found.
+            'is_completed' => true
+        ]);
+
+        return redirect()->back();
+    }
+
 }
