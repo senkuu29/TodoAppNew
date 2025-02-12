@@ -23,3 +23,7 @@ Route::patch('/tasks/{task}/complete', [TaskController::class, 'complete'])->nam
 // Route untuk menampilkan form edit tugas tertentu
 // Menggunakan metode GET karena hanya menampilkan halaman
 Route::get('/tasks/{task}/edit', [TaskController::class, 'edit'])->name('tasks.edit');
+
+// Route untuk memperbarui data tugas yang sudah ada
+// Menggunakan metode PUT karena memperbarui keseluruhan data tugas
+Route::put('/tasks/{task}', [TaskController::class, 'update'])->name('tasks.update');
