@@ -1,0 +1,53 @@
+/* Mengatur warna latar belakang untuk seluruh halaman */
+body {
+    background-color: #f8f9fa; /* Warna abu-abu terang */
+}
+
+/* Styling untuk bagian hero (bagian atas halaman yang menampilkan gambar latar) */
+.hero {
+    background: url("../bg/Funky-Wallpaper.jpg") center/cover no-repeat; /* Menetapkan gambar sebagai background */
+    height: 300px; /* Mengatur tinggi hero section */
+    display: flex; /* Menggunakan flexbox agar elemen di dalamnya bisa disejajarkan */
+    align-items: center; /* Menengahkan elemen secara vertikal */
+    justify-content: center; /* Menengahkan elemen secara horizontal */
+    color: white; /* Warna teks putih agar kontras dengan background */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Menambahkan bayangan pada teks agar lebih terlihat */
+}
+
+/* Efek animasi mengetik untuk teks */
+.typing-animation {
+    overflow: hidden; /* Mencegah teks yang belum muncul terlihat */
+    white-space: nowrap; /* Mencegah teks turun ke baris baru */
+    border-right: 3px solid black; /* Efek kursor berkedip di akhir teks */
+    display: inline-block; /* Agar teks hanya sepanjang yang diperlukan */
+    animation: typing 3s steps(30, end), blink-caret 0.55s step-end infinite; /* Menggunakan dua animasi: mengetik & kursor berkedip */
+}
+
+/* Animasi efek mengetik */
+@keyframes typing {
+    from { width: 0; } /* Awalnya teks tidak terlihat */
+    to { width: 30%; } /* Teks akan muncul sejauh 30% dari panjangnya */
+}
+
+/* Animasi kursor berkedip */
+@keyframes blink-caret {
+    50% { border-color: transparent; } /* Membuat border kursor berkedip */
+}
+
+/* Styling untuk footer */
+footer {
+    color: white; /* Warna teks putih */
+    padding: 20px 0; /* Padding atas dan bawah sebesar 20px */
+    text-align: center; /* Teks berada di tengah */
+}
+
+/* Efek hover pada tombol */
+.btn-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animasi halus saat hover */
+}
+
+/* Efek saat tombol di-hover */
+.btn-hover:hover {
+    transform: scale(1.1); /* Memperbesar tombol saat hover */
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3); /* Menambahkan efek bayangan */
+}
