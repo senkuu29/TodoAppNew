@@ -55,4 +55,15 @@ class TaskController extends Controller
 
         return redirect()->back();
     }
+
+    // fitur detail -> deskripsi
+    public function show($id){
+        $task = Task::findOrFail($id); 
+        $data = [
+            'title' => 'Details',
+            'task' => $task,
+
+        ];
+        return view('pages.details', $data);
+    }
 }
