@@ -12,6 +12,13 @@ class TaskListSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+         // ini adalah data sementara task_list
+         $lists = [
+            [
+                'name' => 'MDPL', //dengan nama ini
+            ]
+        ];
+
+        TaskList::insert($lists);
     }
 }
