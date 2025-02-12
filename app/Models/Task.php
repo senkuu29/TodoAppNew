@@ -15,8 +15,15 @@ class Task extends Model
         'priority',
         'list_id'
     ];
+    
+    //  digunakan untuk melindungi atribut tertentu agar tidak bisa diisi secara massal (mass assignment protection)
+    protected $guarded = [
+        'id',
+        'created_at',
+        'updated_at'
+    ];
 
-     // many-to-one (antara model Task dan model TaskList)
+    // many-to-one (antara model Task dan model TaskList)
      public function list() {
         return $this->belongsTo(TaskList::class, 'list_id');
     }
