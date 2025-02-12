@@ -9,5 +9,15 @@ use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
-    //
+    // index
+    public function index() {
+        $data = [
+            'title' => 'Home',
+            'lists' => TaskList::all(),
+            'tasks' => Task::orderBy('created_at', 'desc')->get(),
+            'priorities' => Task::PRIORITIES
+        ];
+
+        return view('pages.home', $data);
+    }
 }
