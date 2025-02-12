@@ -66,4 +66,10 @@ class TaskController extends Controller
         ];
         return view('pages.details', $data);
     }
+
+    // fitur edit
+    public function edit($id) {
+        $task = Task::findOrFail($id);
+        return response()->json($task);
+    }
 }
