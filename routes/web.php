@@ -19,3 +19,7 @@ Route::resource('tasks', TaskController::class);
 // Route khusus untuk menandai tugas sebagai selesai
 // Menggunakan metode PATCH karena hanya memperbarui sebagian data
 Route::patch('/tasks/{task}/complete', [TaskController::class, 'complete'])->name('tasks.complete');
+
+// Route untuk menampilkan form edit tugas tertentu
+// Menggunakan metode GET karena hanya menampilkan halaman
+Route::get('/tasks/{task}/edit', [TaskController::class, 'edit'])->name('tasks.edit');
