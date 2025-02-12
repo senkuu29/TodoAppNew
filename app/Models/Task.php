@@ -23,6 +23,13 @@ class Task extends Model
         'updated_at'
     ];
 
+    // priorty
+    const PRIORITIES = [
+        'low',
+        'medium',
+        'high'
+    ];
+
     // many-to-one (antara model Task dan model TaskList)
      public function list() {
         return $this->belongsTo(TaskList::class, 'list_id');
