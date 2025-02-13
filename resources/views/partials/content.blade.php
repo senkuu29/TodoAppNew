@@ -26,6 +26,21 @@
             </div>
         </div>
         
+         <!-- Cek apakah ada daftar list yang tersedia -->
+         @if (isset($lists) && count($lists) > 0)
+
+         <!-- Kolom kedua: Menampilkan jumlah daftar list -->
+         <div class="col-md-4">
+            <div class="card shadow-sm h-100 border-primary">
+                <div class="card-header bg-primary text-white">Total List</div>
+                <div class="card-body text-center">
+                    <h1 class="display-5 text-primary">{{ $lists->count() }}</h1>
+                    <p class="card-text">Daftar yang telah Anda buat</p>
+                </div>
+            </div>
+        </div> 
+            
+         @endif
     </div>
 </div>
 <hr>
