@@ -77,6 +77,10 @@
                             @endif
                         @endforeach
                     </div>
+                    <!-- Footer untuk jumlah tugas dan tombol tambah -->
+                    <div class="card-footer d-flex flex-column gap-2 p-2">
+                        <p class="m-0 text-center small text-muted">{{ $list->tasks->count() }} Tugas</p>
+                    </div>
                 </div>
             </div>
         @endforeach
