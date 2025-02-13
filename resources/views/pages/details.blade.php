@@ -14,6 +14,16 @@
             <i class="bi bi-arrow-left"></i> Kembali
         </a>
     </div>
+    
+    <div class="row align-items-center">
+        <div class="col-md-8">
+            <!-- Menampilkan nama tugas dengan teks tebal -->
+            <h3 class="mb-2 text-dark font-weight-bold">{{ $task->name }}</h3> 
+            {{-- ini bagian name task --}}                     
+        </div>
+        <div class="col-md-4 text-end">
+        </div>
+    </div>
 </div>
 @endsection
 
