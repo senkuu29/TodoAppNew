@@ -47,6 +47,14 @@
                                         <button type="button" class="btn btn-sm btn-warning" onclick="editTask({{ $task->id }})">
                                             <i class="bi bi-pencil-square"></i>
                                         </button>
+                                         {{-- fitur hapus task --}}
+                                         <form action="{{ route('tasks.destroy', $task->id) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-sm p-0">
+                                                <i class="bi bi-x-circle text-danger fs-5"></i>
+                                            </button>
+                                        </form>
                                     </div>
                                 </div>
                                  {{-- task berakhir --}}
