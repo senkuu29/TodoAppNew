@@ -20,6 +20,8 @@
 
     @include('partials.content') <!-- Content Section -->
 
+    @yield('content') <!-- Render Content -->
+
       <!-- Bootstrap JS -->
       <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
       <script src="{{ asset('js/script.js') }}"></script>
