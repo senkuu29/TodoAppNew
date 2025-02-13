@@ -56,6 +56,10 @@
                                             </button>
                                         </form>
                                     </div>
+                                    {{-- deskripsi --}}
+                                    <div class="card-body">
+                                        <p class="card-text text-truncate">{{ $task->description }}</p>
+                                    </div>
                                 </div>
                                  {{-- task berakhir --}}
                             @endif
