@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {{-- title --}}
     <title>{{ $title }} - {{ config('app.name') }}</title>
+    <link rel="icon" type="image/png" href="{{ asset('bg/7611770.png') }}">
 
     {{-- style css --}}
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
