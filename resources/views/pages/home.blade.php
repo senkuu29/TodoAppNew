@@ -37,7 +37,11 @@
                                             {{-- nama task --}}
                                             <a href=" {{ route('tasks.show',$task->id)}}" class="fw-bold m-0 {{ $task->is_completed ? 'text-decoration-line-through text-muted' : '' }}">
                                                 {{ $task->name }}
-                                            </a>                         
+                                            </a>    
+                                            {{-- priorty --}}
+                                            <span class="badge text-bg-{{ $task->priorityClass }}">
+                                                {{ $task->priority }}
+                                            </span>                     
                                         </div>
                                     </div>
                                 </div>
