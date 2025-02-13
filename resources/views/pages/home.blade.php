@@ -26,6 +26,25 @@
                             </form>
                         </div>
                     </div>
+                      {{-- isi di dalam list (task) --}}
+                      <div class="card-body  d-flex flex-column gap-2 overflow-auto" style="max-height: 60vh;">
+                        @foreach ($tasks as $task)
+                            @if ($task->list_id == $list->id)
+                                {{-- task --}}
+                                <div class="card">
+                                    <div class="card-header d-flex justify-content-between align-items-center">
+                                        <div>
+                                            {{-- nama task --}}
+                                            <a href=" {{ route('tasks.show',$task->id)}}" class="fw-bold m-0 {{ $task->is_completed ? 'text-decoration-line-through text-muted' : '' }}">
+                                                {{ $task->name }}
+                                            </a>                         
+                                        </div>
+                                    </div>
+                                </div>
+                                 {{-- task berakhir --}}
+                            @endif
+                        @endforeach
+                    </div>
                 </div>
             </div>
         @endforeach
