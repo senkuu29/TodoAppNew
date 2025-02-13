@@ -21,6 +21,9 @@
                     <a class="nav-link" href="https://www.instagram.com/dden.aj/"><i class="bi bi-instagram me-1"></i>dden.aj</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="https://www.tiktok.com/@senkuu291?is_from_webapp=1&sender_device=pc"><i class="bi bi-tiktok me-1"></i>senkuu291</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="#"><i class="bi bi-person-circle me-1"></i>Profile</a>
                 </li>
                 <li class="nav-item">
