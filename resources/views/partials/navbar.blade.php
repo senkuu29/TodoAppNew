@@ -18,7 +18,7 @@
                     <a class="nav-link active" href="https://github.com/senkuu29"><i class="bi bi-github me-1"></i></i>senkuu29</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="bi bi-book me-1"></i>Library</a>
+                    <a class="nav-link" href="https://www.instagram.com/dden.aj/"><i class="bi bi-instagram me-1"></i>dden.aj</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="bi bi-person-circle me-1"></i>Profile</a>
