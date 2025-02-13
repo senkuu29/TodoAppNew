@@ -22,6 +22,8 @@
 
     @yield('content') <!-- Render Content -->
 
+    @include('partials.footer') <!-- footer -->
+
       <!-- Bootstrap JS -->
       <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
       <script src="{{ asset('js/script.js') }}"></script>
