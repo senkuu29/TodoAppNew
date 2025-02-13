@@ -43,6 +43,10 @@
                                                 {{ $task->priority }}
                                             </span>                     
                                         </div>
+                                        {{-- fitur edit --}}
+                                        <button type="button" class="btn btn-sm btn-warning" onclick="editTask({{ $task->id }})">
+                                            <i class="bi bi-pencil-square"></i>
+                                        </button>
                                     </div>
                                 </div>
                                  {{-- task berakhir --}}
