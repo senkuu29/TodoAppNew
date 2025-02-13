@@ -16,6 +16,14 @@
                                 data-bs-toggle="modal" data-bs-target="#addTaskModal" data-list="{{ $list->id }}">
                               <i class="bi bi-plus fs-6"></i> 
                             </button>
+                            {{-- tombol hapus task --}}
+                            <form action="{{ route('lists.destroy', $list->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-sm p-0">
+                                    <i class="bi bi-trash fs-5 text-danger"></i>
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
