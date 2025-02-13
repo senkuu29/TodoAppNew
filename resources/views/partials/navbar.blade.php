@@ -15,7 +15,7 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#"><i class="bi bi-house-door me-1"></i>Home</a>
+                    <a class="nav-link active" href="https://github.com/senkuu29"><i class="bi bi-github me-1"></i></i>senkuu29</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="bi bi-book me-1"></i>Library</a>
