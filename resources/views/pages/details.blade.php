@@ -20,11 +20,17 @@
             <!-- Menampilkan nama tugas dengan teks tebal -->
             <h3 class="mb-2 text-dark font-weight-bold">{{ $task->name }}</h3> 
             {{-- ini bagian name task --}}   
-            
+
             <!-- Menampilkan deskripsi tugas dengan warna teks abu-abu -->
             <p class="text-muted">{{ $task->description }}</p>                   
         </div>
+        
         <div class="col-md-4 text-end">
+            <!-- Badge untuk menampilkan tingkat prioritas tugas dengan warna yang sesuai -->
+            <span class="badge bg-{{$task->priorityClass}} text-white fs-6 py-2 px-3">
+                <i class="bi bi-exclamation-circle me-1"></i> {{$task->priority}}
+            </span>
+
         </div>
     </div>
 </div>
