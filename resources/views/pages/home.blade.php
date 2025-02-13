@@ -60,6 +60,18 @@
                                     <div class="card-body">
                                         <p class="card-text text-truncate">{{ $task->description }}</p>
                                     </div>
+                                    {{-- tombol selesai --}}
+                                    @if (!$task->is_completed)
+                                    <div class="card-footer p-2">
+                                        <form action="{{ route('tasks.complete', $task->id) }}" method="POST">
+                                            @csrf
+                                            @method('PATCH')
+                                            <button type="submit" class="btn btn-sm btn-primary w-100 p-1">
+                                                <i class="bi bi-check fs-6"></i> Selesai
+                                            </button>
+                                        </form>
+                                    </div>
+                                    @endif
                                 </div>
                                  {{-- task berakhir --}}
                             @endif
