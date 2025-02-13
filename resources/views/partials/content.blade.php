@@ -39,6 +39,17 @@
                 </div>
             </div>
         </div> 
+
+         <!-- Kolom ketiga: Menampilkan jumlah total tugas -->
+         <div class="col-md-4">
+            <div class="card shadow-sm h-100 border-primary">
+                <div class="card-header bg-primary text-white">Total Task</div>
+                <div class="card-body text-center">
+                    <h1 class="display-5 text-primary">{{ $tasks->count() }}</h1>
+                    <p class="card-text">Daftar yang telah Anda buat</p>
+                </div>
+            </div>
+        </div>
             
          @endif
     </div>
