@@ -22,6 +22,8 @@
 
     @yield('content') <!-- Render Content -->
 
+    @include('partials.modal') <!-- Modal -->
+
     @include('partials.footer') <!-- footer -->
 
       <!-- Bootstrap JS -->
