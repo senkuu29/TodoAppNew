@@ -24,13 +24,18 @@
             <!-- Menampilkan deskripsi tugas dengan warna teks abu-abu -->
             <p class="text-muted">{{ $task->description }}</p>                   
         </div>
-        
+
         <div class="col-md-4 text-end">
             <!-- Badge untuk menampilkan tingkat prioritas tugas dengan warna yang sesuai -->
             <span class="badge bg-{{$task->priorityClass}} text-white fs-6 py-2 px-3">
                 <i class="bi bi-exclamation-circle me-1"></i> {{$task->priority}}
             </span>
 
+            <!-- Badge untuk menampilkan status tugas (Selesai/Belum Selesai) dengan warna yang sesuai -->
+            <span class="badge bg-{{$task->is_completed ? 'success' : 'danger'}} text-white fs-6 py-2 px-3">
+            <i class="bi {{$task->is_completed ? 'bi-check-circle' : 'bi-x-circle'}} me-1"></i>
+                {{$task->is_completed ? 'Selesai' : 'Belum Selesai'}}
+            </span>
         </div>
     </div>
 </div>
