@@ -9,18 +9,56 @@ use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
-    // index
-    public function index() {
+    public function index(Request $request)
+    {
+        // Mengambil nilai query pencarian dari request
+        $query = $request->input('query');
+    
+        if ($query) {
+            // Mencari tugas (tasks) berdasarkan nama atau deskripsi yang mengandung query
+            $tasks = Task::where('name', 'like', "%{$query}%")
+                ->orWhere('description', 'like', "%{$query}%")
+                ->latest() // Urutkan dari yang terbaru
+                ->get();
+    
+            // Mencari daftar tugas (task lists) yang namanya cocok dengan query
+            // atau memiliki tugas yang sesuai dengan query
+            $lists = TaskList::where('name', 'like', "%{$query}%")
+                ->orWhereHas('tasks', function ($q) use ($query) {
+                    $q->where('name', 'like', "%{$query}%")
+                        ->orWhere('description', 'like', "%{$query}%");
+                })
+                ->with('tasks') // Memuat relasi tasks untuk daftar tugas yang ditemukan
+                ->get();
+    
+            if ($tasks->isEmpty()) {
+                // Jika tidak ada tugas yang ditemukan, tetap muat daftar tugas beserta tugasnya
+                $lists->load('tasks');
+            } else {
+                // Jika ada tugas yang cocok, hanya muat tugas yang sesuai dengan query dalam daftar tugas
+                $lists->load(['tasks' => function ($q) use ($query) {
+                    $q->where('name', 'like', "%{$query}%")
+                        ->orWhere('description', 'like', "%{$query}%");
+                }]);
+            }
+        } else {
+            // Jika tidak ada pencarian, ambil semua tugas terbaru dan daftar tugas beserta tugasnya
+            $tasks = Task::latest()->get();
+            $lists = TaskList::with('tasks')->get();
+        }
+    
+        // Menyiapkan data untuk dikirim ke view
         $data = [
             'title' => 'Home',
-            'lists' => TaskList::all(),
-            'tasks' => Task::orderBy('created_at', 'desc')->get(),
+            'lists' => $lists,
+            'tasks' => $tasks,
             'priorities' => Task::PRIORITIES
         ];
-
+    
+        // Menampilkan halaman home dengan data yang telah difilter
         return view('pages.home', $data);
-    }
-
+    }    
+    
      // kirim task
      public function store(Request $request) {
         $request->validate([
@@ -90,4 +128,7 @@ class TaskController extends Controller
     
         return redirect()->back();
     }
+
+   
+    
 }

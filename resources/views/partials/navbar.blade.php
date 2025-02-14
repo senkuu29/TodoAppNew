@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top shadow-sm">
     <div class="container">
         <!-- Logo / Brand -->
-        <a class="navbar-brand fw-bolder d-flex align-items-center" href="#" >
+        <a class="navbar-brand fw-bolder d-flex align-items-center" href="{{ route('home') }}" >
             <img src="{{asset('bg/7611770.png')}}" alt="" width="40" height="40" class="me-2">
         </a>
 
@@ -10,6 +10,12 @@
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
+        {{-- form search --}}
+        <form class="d-flex" action="{{ route('home') }}" method="GET">
+            <input class="form-control me-2" type="text" name="query" placeholder="Cari tugas..." value="{{ request()->query('query') }}">
+            <button class="btn btn-light text-primary" type="submit"><i class="bi bi-search"></i></button>
+        </form>
 
         <!-- Navbar Links -->
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
