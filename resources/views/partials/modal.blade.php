@@ -100,3 +100,28 @@
         </form>
     </div>
 </div>
+
+
+{{-- Profil Modal --}}
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="staticBackdropLabel">My Profile</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <img src="{{asset('bg/my.jpg')}}" alt="User Avatar" class="rounded-circle mb-3 border border-3 border-primary" style="width: 8rem">
+                <h5 class="fw-bold">Deden Ahmad Jamil</h5>
+                <p class="text-muted">2223590.deden@smkn-2sbg.sch.id</p>
+                <hr>
+                <p>
+                    Saya ingin menjadi mahasiswa di <a href="https://www.upi.edu/">Universitas Pendidikan Indonesia</a> Ilmu Komputer dengan minat dalam pengembangan web, terutama menggunakan <a href="https://laravel.com/">laravel</a> dan <a href="https://getbootstrap.com/">bootstrap</a>. Saya suka mengeksplorasi teknologi baru dan terus belajar untuk meningkatkan keterampilan pemrograman saya. Saat ini, saya sedang mengembangkan aplikasi To-Do List berbasis web dan ingin menciptakan solusi yang efisien serta user-friendly. 🚀
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary"data-bs-dismiss="modal">understand</button>
+            </div>
+        </div>
+    </div>
+</div>

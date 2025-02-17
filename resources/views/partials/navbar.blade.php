@@ -30,10 +30,7 @@
                     <a class="nav-link" href="https://www.tiktok.com/@senkuu291?is_from_webapp=1&sender_device=pc"><i class="bi bi-tiktok me-1"></i>senkuu291</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="bi bi-person-circle me-1"></i>Profile</a>
-                </li>
-                <li class="nav-item">
-                    <a class="btn btn-light text-primary ms-lg-3 px-3" href="#"><i class="bi bi-box-arrow-right me-1"></i>Logout</a>
+                    <a class="btn btn-light text-primary ms-lg-3 px-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="bi bi-person-circle me-2"></i>Profile</a>
                 </li>
             </ul>
         </div>
