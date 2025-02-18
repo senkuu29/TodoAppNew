@@ -20,14 +20,14 @@ class TaskSeeder extends Seeder
                 'name' => 'Papandayan',
                 'description' => 'Sebelum masuk Semester Genap Kelas Dua Belas RPL',
                 'is_completed' => true,
-                'priority' => 'medium',
+                'priority' => 'low',
                 'list_id' => TaskList::where('name', 'MDPL')->first()->id,
             ],
             [
                 'name' => 'Gn. Putri',
                 'description' => 'Sesudah menjelang masuk Semester Ganjil Dua Belas RPL',
                 'is_completed' => false,
-                'priority' => 'medium',
+                'priority' => 'high',
                 'list_id' => TaskList::where('name', 'MDPL')->first()->id,
             ],
             [
