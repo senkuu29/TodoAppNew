@@ -33,11 +33,17 @@
                                 {{-- task --}}
                                 <div class="card">
                                     <div class="card-header d-flex justify-content-between align-items-center">
-                                        <div>
+                                        <div class="d-flex justify-content-center gap-2">
+                                            @if ($task->priority == 'high' && !$task->is_completed)
+                                                <!-- Menampilkan indikator loading jika tugas memiliki prioritas tinggi dan belum selesai -->
+                                                <div class="spinner-grow spinner-grow-sm text-danger" role="status">
+                                                    <span class="visually-hidden">Loading...</span>
+                                                </div>
+                                            @endif
                                             {{-- nama task --}}
-                                            <a href=" {{ route('tasks.show',$task->id)}}" class="fw-bold m-0 {{ $task->is_completed ? 'text-decoration-line-through text-muted' : '' }}">
+                                            <a href=" {{ route('tasks.show',$task->id)}}" class="fw-bold m-0 d-flex {{ $task->is_completed ? 'text-decoration-line-through text-muted' : '' }}">
                                                 {{ $task->name }}
-                                            </a>    
+                                            </a> 
                                             {{-- priorty --}}
                                             <span class="badge text-bg-{{ $task->priorityClass }}">
                                                 {{ $task->priority }}
